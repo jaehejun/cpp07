@@ -12,13 +12,13 @@ int main()
 
     Array<int> arr3(arr2);
     std::cout << "arr3 size: " << arr3.size() << std::endl;
-    std::cout << "@@@@@@@@@ARR3 CONS VIA COPY@@@@@@@@" << std::endl;
+    std::cout << "@@@@@@@@@ARR3 CONS WITH COPY@@@@@@@@" << std::endl;
     arr3.printArray();
 
     Array<int> arr4;
     arr4 = arr2;
     std::cout << "arr4 size: " << arr4.size() << std::endl;
-    std::cout << "@@@@@@@@@ARR4 CONS VIA ASSIGN OPERATOR@@@@@@@@" << std::endl;
+    std::cout << "@@@@@@@@@ARR4 WITH ASSIGN OPERATOR@@@@@@@@" << std::endl;
     arr4.printArray();
 
     try
