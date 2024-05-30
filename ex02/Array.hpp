@@ -14,10 +14,15 @@ class Array
     Array() : array(NULL), length(0) {}
     Array(unsigned int n) : length(n)
     {
-        array = new T[length];
-        for (unsigned int i = 0; i < length; i++)
+        if (n == 0)
+            array = NULL;
+        else
         {
-            array[i] = T();
+            array = new T[length];
+            for (unsigned int i = 0; i < length; i++)
+            {
+                array[i] = T();
+            }
         }
     }
     Array(const Array &other) : length(other.length)
@@ -48,6 +53,15 @@ class Array
     }
 
     T &operator[](unsigned int index)
+    {
+        if (index >= length)
+        {
+            throw std::exception();
+        }
+        return array[index];
+    }
+
+    const T &operator[](unsigned int index) const
     {
         if (index >= length)
         {

@@ -3,14 +3,32 @@
 
 #include <iostream>
 
-template <typename T>
-void iter(T *arrAddress, size_t arrLength, void (*function)(T&))
+template <typename T, typename F>
+void iter(T *arrAddress, size_t arrLength, F function)
 {
-	for (size_t i = 0; i < arrLength; i++)
-	{
-		function(arrAddress[i]);
-	}
+    for (size_t i = 0; i < arrLength; i++)
+    {
+        function(arrAddress[i]);
+    }
 }
+
+//template <typename T>
+//void iter(T *arrAddress, size_t arrLength, void (*function)(T&))
+//{
+//	for (size_t i = 0; i < arrLength; i++)
+//	{
+//		function(arrAddress[i]);
+//	}
+//}
+
+//template <typename T>
+//void iter(T *arrAddress, size_t arrLength, void (*function)(const T&))
+//{
+//	for (size_t i = 0; i < arrLength; i++)
+//	{
+//		function(arrAddress[i]);
+//	}
+//}
 
 template <typename T>
 void printElement(T &element)
